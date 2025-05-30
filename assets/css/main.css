@@ -5,12 +5,12 @@
 3. index 클래스에 .빼고 복붙
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
-.arizonia-regular {
-   /* footer 폰트 변경할때 font-family사용 */
-  font-family: "Arizonia", cursive;
-  font-weight: 400;
+.raleway-park {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300 !important;
   font-style: normal;
 }
 
@@ -27,8 +27,14 @@
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #273d4e; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #ff4a17; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
-  /* 막대기 색깔 바꾸기 */
-  --accent-color-line : #51ff00;
+  /* 메뉴바 막대기 */
+  --accent-color-menu : #ffffff;
+  /* 막대기 */
+  --accent-color-line : #000000;
+  /* 재생버튼 */
+  --accent-color-btn : #000000;
+  /* 부트스트랩 아이콘 */
+  --accent-color-i : #ff0000;
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -146,12 +152,13 @@ h6 {
   }
 }
 
+/* 재생버튼 */
 /* Pulsating Play Button
 ------------------------------*/
 .pulsating-play-btn {
   width: 94px;
   height: 94px;
-  background: radial-gradient(var(--accent-color) 50%, color-mix(in srgb, var(--accent-color), transparent 75%) 52%);
+  background: radial-gradient(var(--accent-color-btn) 50%, color-mix(in srgb, var(--accent-color-btn), transparent 75%) 52%);
   border-radius: 50%;
   display: block;
   position: relative;
@@ -170,7 +177,7 @@ h6 {
   animation-timing-function: steps;
   opacity: 1;
   border-radius: 50%;
-  border: 5px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+  border: 5px solid color-mix(in srgb, var(--accent-color-btn), transparent 30%);
   top: -15%;
   left: -15%;
   background: rgba(198, 16, 0, 0);
@@ -209,7 +216,7 @@ h6 {
 }
 
 .pulsating-play-btn:hover:after {
-  border-left: 15px solid var(--accent-color);
+  border-left: 15px solid var(--accent-color-btn);
   transform: scale(20);
 }
 
@@ -229,7 +236,7 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
-  --background-color: rgba(0, 0, 0, 0);
+  --background-color: rgba(153, 1, 1, 0);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   color: var(--default-color);
@@ -299,13 +306,18 @@ h6 {
 /* Global Header on Scroll 스크롤될때 헤더 색상
 ------------------------------*/
 .scrolled .header {
-  --background-color: rgba(21, 34, 43, 0.85);
+  --background-color: rgba(0, 119, 255, 0.85);
 }
 
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Desktop Navigation */
+/* 메뉴바 안보이게 숨김 */
+#navmenu {
+  display: none;
+}
+
 @media (min-width: 1200px) {
   .navmenu {
     padding: 0;
@@ -496,7 +508,7 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    background-color: color-mix(in srgb, var(--accent-color-menu), transparent 90%);
   }
 
   .navmenu a i:hover,
@@ -589,12 +601,12 @@ h6 {
   margin-right: 6px;
 }
 
+/* 마지막말(footer) 폰트 변경 */
 .footer .footer-about .logo span {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 1px;
-  /* footer 폰트 변경 */
-  font-family: "Arizonia", cursive;
+  font-family: "Raleway", sans-serif;
   color: var(--heading-color);
 }
 
@@ -877,7 +889,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   position: relative;
 }
 
@@ -1026,7 +1038,7 @@ section,
   margin-bottom: 20px;
 }
 
-.about .fst-italic {
+.about .fst-normal {
   color: color-mix(in srgb, var(--default-color), var(--contrast-color) 50%);
 }
 
@@ -1045,7 +1057,7 @@ section,
   font-size: 20px;
   left: 0;
   top: -3px;
-  color: var(--accent-color);
+  color: var(--accent-color-i);
 }
 
 .about .content p:last-child {
@@ -1175,9 +1187,10 @@ section,
   overflow: hidden;
 }
 
+/* 나의 스킬 아이콘 크기 조절 max-width */
 .clients .client-logo img {
   padding: 20px 40px;
-  max-width: 90%;
+  max-width: 70%;
   transition: 0.3s;
   opacity: 0.5;
   filter: grayscale(100);
@@ -1453,6 +1466,7 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
+
 .portfolio .portfolio-filters {
   padding: 0;
   margin: 0 auto 20px auto;
@@ -1532,7 +1546,7 @@ section,
   color: rgba(255, 255, 255, 0.8);
 }
 
-.portfolio .portfolio-content .portfolio-info .preview-link,
+/* .portfolio .portfolio-content .portfolio-info .preview-link,
 .portfolio .portfolio-content .portfolio-info .details-link {
   position: absolute;
   left: calc(50% - 40px);
@@ -1541,6 +1555,47 @@ section,
   color: #fff;
   transition: 0.3s;
   line-height: 1.2;
+} */
+
+/* 포트폴리오 아이콘 중앙정렬 */
+/* .portfolio .portfolio-content .portfolio-info .preview-link,
+.portfolio .portfolio-content .portfolio-info .details-link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1.2;
+} */
+
+/* 아이콘이 1개인 경우 */
+.portfolio .portfolio-content .portfolio-info a {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 26px;
+  color: #fff;
+  transition: 0.3s;
+  line-height: 1.2;
+}
+
+/* 아이콘 2개인 경우: 부모에 클래스가 붙는 방식 */
+.portfolio-info .two-icons a {
+  top: calc(50% - 14px); /* 세로 위치 고정 */
+  transform: translate(0, 0); /* transform 초기화 */
+}
+
+/* 첫 번째 아이콘 - 왼쪽 */
+.portfolio-info.two-icons a:nth-of-type(1) {
+  left: calc(50% - 40px);
+}
+
+/* 두 번째 아이콘 - 오른쪽 */
+.portfolio-info.two-icons a:nth-of-type(2) {
+  left: calc(50% + 40px);
 }
 
 .portfolio .portfolio-content .portfolio-info .preview-link:hover,
