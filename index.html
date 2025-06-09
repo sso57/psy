@@ -2,17 +2,47 @@
 <html lang="ko">
 
 <head>
+  <!-- <style>
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 80%;
+      width: auto;
+      height: auto;
+      object-fit: cover;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+   #bg-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* 여기서 불투명도 조절 (0.3 = 30%) */
+  z-index: -1;
+  pointer-events: none;
+    }
+
+   #clients {
+    position: relative;
+    z-index: 1; /* 배경 영상(z-index: -1)보다 위에 오도록 설정 */
+  }
+  </style> -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>박소연 포트폴리오</title>
   <meta name="author" content="박소연">
   <meta name="description" content="">
-  <meta name="keywords" content="포트폴리오, html, css, js, ">
+  <meta name="keywords" content="트폴리오, html, css, js, ">
   <meta name="robots" content="noindex, nofollow">
 
   <!-- 파비콘 -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="assets/img/androidf.png" rel="icon">
+  <link href="assets/img/applef.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -32,13 +62,18 @@
 
 <body class="index-page">
 
+  <!-- <video autoplay muted loop playsinline id="bg-video">
+    <source src="assets/img/EX.mp4" type="video/mp4">
+  </video>
+  <div id="bg-overlay"></div> -->
+
   <!-- 헤더 -->
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> 이미지를 넣어도 된다는 뜻(파비콘 png넣어도 됨)-->
+        <img src="assets/img/androidf.png" alt="">
         <h1 class="sitename raleway-park">PORTPOLIO</h1>
       </a>
 
@@ -71,18 +106,9 @@
   <main class="main">
 
     <!-- 시작(Hero Section) -->
-    <section id="hero" class="hero section dark-background">
+    <section id="hero" class="hero section">
       
       <!-- <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in"> -->
-    <video autoplay muted loop playsinline
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
-        <source src="assets/img/EX.mp4" type="video/mp4">
-    </video>
-
-      
-      <div class="container d-flex flex-column align-items-center">
-        <h2 data-aos="fade-up" data-aos-delay="100">디자인, 영상, 피그마</h2>
-        <p data-aos="fade-up" data-aos-delay="200">여기에 내용 입력하는 곳</p>
         <!-- <div class="d-flex mt-4" data-aos="fade-up" data-aos-delay="300">
           <a href="#about" class="btn-get-started">나의 소개</a>
           <a href="https://www.youtube.com/watch?v=MLayk97-7Uo" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i>
@@ -97,7 +123,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>DESIGN</h2>
+        <h2>PROJECT</h2>
         <!-- <p>CHECK OUR PORTFOLIO</p> -->
       </div><!-- End Section Title -->
 
@@ -107,72 +133,41 @@
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
             <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-branding">Logo</li>
             <li data-filter=".filter-detailedpage">Detailed page</li>
             <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-example">example</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
-            <!-- 브랜딩 -->
+            <!-- 브랜딩1 -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/로고1 썸네일.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <p>어떤 건지 설명하세요</p>
+                  <p>돈까스 전문점 로고</p>
                   <!-- 아이콘 위치 변경 css에서 preview-link, details-link위치 변경 -->
                   <!-- glightbox클래스 + d-none클래스로 오른쪽 슬라이드 -->
-                  <a href="assets/img/portfolio/app-1.jpg" title="여기에 입력하세요" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/로고1 설명.jpg" title="" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>                  
+                  <a href="assets/img/portfolio/로고1 원간판.jpg" title="" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/로고1 메뉴판.jpg" title="" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/로고1 명함 앞.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/로고1 명함 뒤.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
 
-            <!-- 브랜딩 -->
+            <!-- 브랜딩2 -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/branding-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/로고2 썸네일.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info">
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-1.jpg" title="여기에 입력하세요" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/app-2.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
-                  <a href="assets/img/portfolio/app-1.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
+                  <p>지식 교육 플랫폼 로고</p>
+                  <a href="assets/img/portfolio/로고2 설명.jpg" title="" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/로고2 종이로고.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/로고2 사원증 패턴.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/portfolio/로고2 봉투.jpg" data-gallery="portfolio-gallery-branding-1" class="glightbox preview-link d-none"><i class="bi bi-zoom-in"></i></a>
 
-            <!-- 상세페이지 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-detailedpage">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                      <a href="page-view.html" target="_blank" class="preview-link"><i class="bi bi-zoom-in"></i></a>                  
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- 상세페이지 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-detailedpage">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-1.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                      <a href="page-view.html" target="_blank" class="preview-link"><i class="bi bi-zoom-in"></i></a>                  
-                </div>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <!-- 미정 -->
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/app-2.jpg" class="img-fluid" alt="">
-                <div class="portfolio-info">
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/app-2.jpg" title="앱2" data-gallery="portfolio-gallery-app-2" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                  <a href="portfolio-details.html" title="More Details" class="details-link"></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
@@ -180,14 +175,37 @@
             <!-- 피그마 -->
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
               <div class="portfolio-content h-100">
-                <img src="assets/img/portfolio/product-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/portfolio/피그마 썸네일.jpg" class="img-fluid" alt="">
                 <div class="portfolio-info two-icons">
-                  <p>Lorem ipsum, dolor sit amet consectetur</p>
-                  <a href="assets/img/portfolio/product-2.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <p>구독 서비스 앱 기획</p>
+                    <a href="page-view3.html" target="_blank" class="preview-link"><i class="bi bi-zoom-in"></i></a>                  
                   <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" title="설명이 필요하다면 입력하세요" class="glightbox details-link"><i class="bi bi-link-45deg"></i></a>
                 </div>
               </div>
             </div><!-- End Portfolio Item -->
+            
+            <!-- 상세페이지1 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-detailedpage">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/상세페이지 썸네일.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>휴대용 믹서기 상세페이지</p>
+                      <a href="page-view.html" target="_blank" class="preview-link"><i class="bi bi-zoom-in"></i></a>                  
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
+            <!-- 상세페이지2 -->
+            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-detailedpage">
+              <div class="portfolio-content h-100">
+                <img src="assets/img/portfolio/상세페이지2 썸네일.jpg" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <p>제주 감귤 상세페이지(AI 사용)</p>
+                      <a href="page-view2.html" target="_blank" class="preview-link"><i class="bi bi-zoom-in"></i></a>                  
+                </div>
+              </div>
+            </div><!-- End Portfolio Item -->
+
           </div>
 
 
@@ -199,14 +217,41 @@
     <section id="about" class="about section">
 
     <div class="container section-title" data-aos="fade-up">
-        <h2>VIDEO</h2>
+        <h2>VIDEO(영상제목 클릭시 유튜브로 이동합니다)</h2>
         <!-- <p>Featured Srvices<br></p>       -->
     </div><!-- End Section Title -->
       
       <div class="container">
       
         <div class="row gy-4">
+          <!-- 영상1 -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="250">
+            <!-- padding start -->
+            <div class="content ps-0">
+
+              <div class="position-relative mb-4">
+                <img src="assets/img/제품 홍보 썸네일.jpg" class="img-fluid1" alt="">
+                <a href="https://youtu.be/EPXQ28FGY8k" class="glightbox pulsating-play-btn"></a>
+              </div>
+              
+              <p class="fst-normal text-center">
+                롬앤 아이섀도우 제품 영상
+              </p>
+              <!-- 체크 표시 아이콘 들어간곳 -->
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i> <span>기획•촬영•편집 담당.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>Better Than Eyes 시리즈 중 하나의 색상을 선택하여 고유한 텍스처와 무드를 강조하였습니다.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>비주얼 무드 설정 : 상대적으로 대중들에게 생소한 버들꽃보다 익숙한 벚꽃이나 매화와 유사한 느낌의 소품을 활용하여 분위기를 전달하였습니디.</span></li>               
+              </ul>
+              <!-- <p>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+              </p> -->
+            </div>
+          </div>
+
+          <!-- 영상2 -->
+           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <!-- padding start -->
             <div class="content ps-0">
 
@@ -215,73 +260,44 @@
                 <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
               </div>
               
-              <p class="fst-normal">
-                설명1.
+              <p class="fst-normal text-center">
+                무신사 앱 브랜드 영상
               </p>
-              <!-- 체크 표시 아이콘 들어간곳(부트스트랩-아이콘-icon font복붙) -->
+              <!-- 체크 표시 아이콘 들어간곳 -->
               <ul>
-                <li><i class="bi bi-arrow-down-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>기획•편집 담당.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>패션을 넘어 여러 분야로 확장 중인 무신사의 다양성을 보여주기 위해 제작한 영상입니다.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>각 카테고리의 제품들을 누끼 이미지로 .</span></li>
               </ul>
-              <p>
+              <!-- <p>
                 Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </p>
+              </p> -->
             </div>
           </div>
 
+          <!-- 영상3 -->
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="250">
             <!-- padding start -->
             <div class="content ps-0">
 
-              <!-- 영상 -->
               <div class="position-relative mb-4">
-                <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
-                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
+                <img src="assets/img/당근마켓 썸네일.jpg" class="img-fluid2" alt="">
+                <a href="https://youtu.be/NizE8b41VHk" class="glightbox pulsating-play-btn"></a>
               </div>
               
-              <p class="fst-normal">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
+              <p class="fst-normal text-center">
+                당근마켓 브랜드 영상(AI 사용)
               </p>
               <!-- 체크 표시 아이콘 들어간곳 -->
               <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>기획•그림•편집 담당.</span></li>
+                <li><i class="bi bi-check-circle-fill"></i> <span>'당신 근처'라는 브랜드 이름처럼 이웃과의 가까운 연결과 따뜻한 거래의 분위기를 담았습니다.</span></li>
               </ul>
-              <p>
+              <!-- <p>
                 Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
                 velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="250">
-            <!-- padding start -->
-            <div class="content ps-0 ps-lg-5">
-
-              <!-- 영상 -->
-              <div class="position-relative mb-4">
-                <img src="assets/img/about-2.jpg" class="img-fluid" alt="">
-                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
-              </div>
-              
-              <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <!-- 체크 표시 아이콘 들어간곳 -->
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
-              </p>
+              </p> -->
             </div>
           </div>
           
@@ -308,23 +324,23 @@
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/photoshop.png" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/aftereffect.png" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/illustrator.png" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/excel.png" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
           <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+            <img src="assets/img/clients/figma.png" class="img-fluid" alt="">
           </div><!-- End Client Item -->
 
         </div>
@@ -686,7 +702,7 @@
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Soyeon</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-      Designed by Parksoyeon
+      Created by Park Soyeon
       </div>
     </div>
 
@@ -712,6 +728,7 @@
   <script src="assets/js/main.js"></script>
 
 </body>
+</html>  
 
 </html>
 

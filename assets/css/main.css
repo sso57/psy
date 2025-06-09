@@ -6,6 +6,7 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 
 .raleway-park {
   font-family: "Raleway", sans-serif;
@@ -16,25 +17,25 @@
 
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font: 'Pretendard Variable',"Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway",  sans-serif;
   --nav-font: "Inter",  sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: #ffffff; /* Background color for the entire website, including individual sections */
+  --background-color: #f8f8f871; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #273d4e; /* Color for headings, subheadings and title throughout the website */
   --accent-color: #ff4a17; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   /* 메뉴바 막대기 */
   --accent-color-menu : #ffffff;
   /* 막대기 */
-  --accent-color-line : #000000;
+  --accent-color-line : #444444;
   /* 재생버튼 */
   --accent-color-btn : #000000;
   /* 부트스트랩 아이콘 */
-  --accent-color-i : #ff0000;
+  --accent-color-i : #444444;
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -49,6 +50,35 @@
   --nav-dropdown-hover-color: #ff4a17; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
+/* 썸네일 크기 */
+.portfolio-content img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;   /* 이미지 전부 보이게 */
+  display: block;
+  background-color: #fff;  /* 빈 여백 영역이 생기므로 배경색 넣어도 좋음 */
+}
+
+/* 영상 썸네일 크기기 */
+.img-fluid1 {
+  max-width: 100%;
+  height: 315px;
+  object-fit: cover; /* 또는 contain – 아래 참고 */
+  display: block;
+}
+
+.img-fluid2 {
+  max-width: 100%;
+  height: 315px;
+  object-fit: cover; /* 또는 contain – 아래 참고 */
+  display: block;
+}
+
+/* 스킬 이미지 */
+.client-logo img {
+  max-height: 97px;
+  object-fit: contain;
+}
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
@@ -58,7 +88,7 @@
 
 /* footer 색상 */
 .dark-background {
-  --background-color: #000910;
+  --background-color: rgba(0, 119, 255, 0.85);
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #28323a;
@@ -165,6 +195,7 @@ h6 {
   overflow: hidden;
 }
 
+/* 버튼 애니메이션 */
 .pulsating-play-btn:before {
   content: "";
   position: absolute;
@@ -178,8 +209,8 @@ h6 {
   opacity: 1;
   border-radius: 50%;
   border: 5px solid color-mix(in srgb, var(--accent-color-btn), transparent 30%);
-  top: -15%;
-  left: -15%;
+  top: -13%;
+  left: -14%;
   background: rgba(198, 16, 0, 0);
 }
 
@@ -237,7 +268,7 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   --background-color: rgba(153, 1, 1, 0);
-  --default-color: #ffffff;
+  --default-color: rgba(0, 119, 255, 0.85);;
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
@@ -901,7 +932,7 @@ section,
   margin: 0;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  color: color-mix(in srgb, var(--default-color));
   position: relative;
 }
 
@@ -932,14 +963,26 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
 .hero {
   width: 100%;
-  min-height: 100vh;
+  min-height: 0vh;
   position: relative;
-  padding: 80px 0;
+  z-index: 0;
+  overflow: hidden;
+  padding: 40px 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  
+}
+
+.hero:before {
+  content: "";
+  background: rgba(0, 119, 255, 0.85);
+  position: absolute;
+  inset: 0;
+  z-index: 1;
 }
 
 .hero img {
@@ -949,15 +992,7 @@ section,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
-}
-
-.hero:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 .hero .container {
@@ -1915,6 +1950,10 @@ section,
   margin-right: 8px;
   color: var(--accent-color);
 }
+
+/* .section {
+  background-color: transparent !important;
+} */
 
 /*--------------------------------------------------------------
 # Starter Section Section
